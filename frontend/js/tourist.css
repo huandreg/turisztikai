@@ -1,0 +1,63 @@
+body {
+  background-image: url(staticImages/travelFlight.jpg);
+  background-size: contain;
+}
+
+.upper-line {
+  background-image: url(staticImages/bannerTravel.jpg);
+  background-size: contain;
+  max-width: auto;
+  height: 250px;
+  background-color: black;
+}
+
+h1 {
+  margin: 20px;
+  text-align: center;
+  font-style: italic;
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h6,
+h4 {
+  font-style: normal;
+}
+
+
+.card {
+  text-align: center;
+  margin: 60px 3px 3px 3px;
+  border: 2px solid black;
+}
+
+.middle {
+  display: flex;
+  align-items: center;
+}
+
+.row {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-line {
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}
+
+button {
+  font-size: larger;
+  border-radius: 10px;
+  border: solid black 2px;
+  margin: 10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight:500;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
