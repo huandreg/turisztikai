@@ -14,13 +14,38 @@
   <div class="upper-line"></div>
   <h1>Turisztikai látványosságok</h1>
   <div class="button-line">
-    <input placeholder="Adj meg egy szót!">
+    <input placeholder="Adj meg egy szót!" type="text">
     <button>Keresés</button>
-    <button onclick="window.location.href='index.html'">Vissza</button>
+    <button onclick="window.location.href='index.html'">Vissza A Főoldalra</button>
+  </div>
+  <div class="add-data-line">
+    <div id="inner-new-data-container">
+      <form action="javascript:addCountry()">
+        <p>Új Ország Felvitele: <input placeholder="Csodálatosisztánia" type="text" id="new-country-id"><input
+            type="submit"></p>
+      </form>
+      <br>
+      <form action="javascript:addCity()">
+        <p>Új Város Felvitele: <select name="choose-country-name" id="choose-country-id"></select><input
+          placeholder="Mucsaröcsöge" type="text" id="new-city-id"><input type="submit"></p>
+      </form>
+
+      <br><br>
+
+      <form action="javascript:newAddition()" method="post">
+        Ország, Város: <select name="city-name" id="city-name"></select>
+        <p>Látványosság neve: <input placeholder="Mucsaröcsögei Csodapalota" name="attraction-name"></p>
+        <p>Cím: <input placeholder="4093, Mittomén utca 4-8." type="text" name="address-name"></p>
+        <p>Nyitvatartás: <input placeholder="H-P: 8:00-17:30;Sz: 10:00-15:00;V: -" type="text" name="opening-name">
+        </p>
+        <p>Leirás: <input placeholder="Ide jöhet a leírás, 500 karakter" name="description-name"></p>
+        <p><input type="image" name="image-name"></p>
+        <p><input type="submit" value="Küldés"></p>
+      </form>
+    </div>
   </div>
   <div class="attractDatas"></div>
-  <div class="add-data-line"></div>
-  
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/tourist.js"></script>
 </body>

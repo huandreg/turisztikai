@@ -6,14 +6,19 @@ class CountrySerializer(serializers.ModelSerializer):
     model = Country
     fields = '__all__'
 
-
 class CitySerializer(serializers.ModelSerializer):
-  model = City
-  fields = '__all__'
+  class Meta:  
+    model = City
+    fields = '__all__'
+    depth = 1
 
+class CitySerializerPOST(serializers.ModelSerializer):
+  class Meta:
+    model = City
+    fields = '__all__'
 
 class AttractionSerializer(serializers.ModelSerializer):
   class Meta:
     model = Attraction
     fields = '__all__'
-    depth = 3
+    depth = 2
