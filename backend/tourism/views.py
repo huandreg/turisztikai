@@ -12,6 +12,8 @@ def allData(request):
     allAttraction = Attraction.objects.all()
     serializedAttractions = AttractionSerializer(allAttraction, many=True)
     return Response(serializedAttractions.data)
+  #if(request.method=="POST"):
+  #  serialized = AttractionSerializer()
 
 @api_view(["GET", "POST"])
 def allCountries(request):

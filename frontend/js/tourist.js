@@ -1,7 +1,7 @@
 const serverUrl = "http://127.0.0.1:8000";
 let dataLine = document.querySelector(".attractDatas");
 
-function allAttraction() {
+function allAttractions() {
   //dataLine.innerHTML = "";
   fetch(`${serverUrl}/api/allattraction/`)
     .then(res => res.json())
@@ -31,7 +31,7 @@ function listCountries() {
     .then(res => res.forEach(country => {
       document.getElementById("choose-country-id").innerHTML +=
         `<option value=${country.id}>${country.attractionCountry}</option>`
-        console.log(country.id)
+      console.log(country.id)
     })
     );
 }
@@ -40,8 +40,8 @@ function listCities() {
   fetch(`${serverUrl}/api/allcities/`)
     .then(res => res.json())
     .then(res => res.forEach(city => {
-      document.querySelector("#city-name").innerHTML +=
-        `<option value=${city.id}> ${city.attractionCountry.attractionCountry}, ${city.attractionCity}</option>`
+      document.querySelector("#choose-city-id").innerHTML +=
+        `<option value=${city.id}><div id="option-div-country">${city.attractionCountry.attractionCountry}</div>, <div id="option-div-city">${city.attractionCity}</div></option>`
     }));
 }
 
@@ -64,10 +64,10 @@ function addCountry() {
       window.location.reload();
     }).catch(error => console.log(error));
 }
+
 function addCity() {
   let TheNewCity = document.getElementById("new-city-id").value;
   let ChoosenCountry = document.querySelector("#choose-country-id").value;
-  console.log('ez van a fetch-ben  ' + ChoosenCountry); 
   let dataStringy = JSON.stringify(
     {
       attractionCity: TheNewCity,
@@ -83,31 +83,47 @@ function addCity() {
       body: dataStringy
     }).then(res => res.json())
     .then(data => {
-      console.log("Valami történt")
       window.location.reload();
-    }).catch(error => console.log("ERROR"));
-
+    }).catch(error => console.log(error));
 }
 
 
 
-
-
-
-
-
 function newAddition() {
-  fetch(`${serverUrl}/api/`)
-  dataLine.innerHTML = `
-`}
+  let AttName = document.getElementById("#att-name-id").value;
+  let AttAddress = document.getElementById("#att-address-id").value;
+  let AttOpening = document.getElementById("#opening-id").value;
+  let AttDescription = document.getElementById("#description-id").value;
+  let TheCityAt = document.getElementById("#option-div-city").value;
+  let TheCountryAt = document.getElementById("#option-div-city").value;
+  //img - háziállatos cumót átnézni
+  let massData = JSON.stringify(
+    {
+      name: AttName,
+      address: AttAddress,
+      openingHours: AttOpening,
+      description: AttDescription,
+      attractionCity: TheCityAt,
+      attractionCountry: TheCountryAt
+    }
+  ); fetch(`${serverUrl}/api/allattraction/`, {
+    method: 'POST',
+    headers:
+    {
+      'Content-Type': 'application/json'
+    },
+    body: massData
+  }).then(res => res.json())
+    .then(data => {
+      window.location.reload();
+    }).catch(error => console.log(error));
+}
+
+function deleteAttraction() { }
 
 
 
 
-
-
-
-
-allAttraction();
+allAttractions();
 listCountries();
 listCities();

@@ -25,8 +25,7 @@ class Attraction(models.Model):
   address = models.CharField(max_length=150)
   openingHours = models.CharField(max_length=100)
   description = models.CharField(max_length=500)  
-  attractionImage = models.ImageField(upload_to="")
-  #valami értékelés
+  attractionImage = models.ImageField(upload_to="images/")
   
   def __str__(self):
     return self.name
