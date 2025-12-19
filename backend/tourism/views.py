@@ -4,16 +4,22 @@ from rest_framework.response import Response
 from rest_framework import status
 
 from .models import Attraction, Country, City
-from .serializers import AttractionSerializer, CitySerializer, CitySerializerPOST, CountrySerializer 
+from .serializers import AttractionSerializer,AttractionSerializerPOST, CitySerializer, CitySerializerPOST, CountrySerializer 
 
-@api_view(["GET"])
+@api_view(["GET", "POST"])
 def allData(request):
   if(request.method== "GET"):
     allAttraction = Attraction.objects.all()
     serializedAttractions = AttractionSerializer(allAttraction, many=True)
     return Response(serializedAttractions.data)
-  #if(request.method=="POST"):
-  #  serialized = AttractionSerializer()
+  if(request.method=="POST"):
+    serialized = AttractionSerializerPOST(data=request.data)
+    print(request.data)
+    if serialized.is_valid():
+      serialized.save()
+      return Response(serialized.data)
+    serialized.errors()
+    print("ERROR")
 
 @api_view(["GET", "POST"])
 def allCountries(request):

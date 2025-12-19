@@ -6,6 +6,7 @@ class CountrySerializer(serializers.ModelSerializer):
     model = Country
     fields = '__all__'
 
+
 class CitySerializer(serializers.ModelSerializer):
   class Meta:  
     model = City
@@ -17,8 +18,16 @@ class CitySerializerPOST(serializers.ModelSerializer):
     model = City
     fields = '__all__'
 
+
+
 class AttractionSerializer(serializers.ModelSerializer):
   class Meta:
     model = Attraction
     fields = '__all__'
     depth = 2
+
+class AttractionSerializerPOST(serializers.ModelSerializer):
+  attractionCity = serializers.PrimaryKeyRelatedField(queryset=City.objects.all())   #„Amikor attractionCity érkezik POST-ban,egy ID-t várok,és abból megkeresem a City objektumot,majd azt teszem rá az Attraction.attractionCity FK mezőre.”
+  class Meta:
+    model = Attraction
+    fields = '__all__'

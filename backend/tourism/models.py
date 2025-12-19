@@ -25,7 +25,19 @@ class Attraction(models.Model):
   address = models.CharField(max_length=150)
   openingHours = models.CharField(max_length=100)
   description = models.CharField(max_length=500)  
-  attractionImage = models.ImageField(upload_to="images/")
+  attractionImage = models.ImageField(upload_to="")
+
+  rate05 = models.IntegerField(default=0)
+  rate10 = models.IntegerField(default=0)
+  rate15 = models.IntegerField(default=0)
+  rate20 = models.IntegerField(default=0)
+  rate25 = models.IntegerField(default=0)
+  rate30 = models.IntegerField(default=0)
+  rate35 = models.IntegerField(default=0)
+  rate40= models.IntegerField(default=0)
+  rate45 = models.IntegerField(default=0)
+  rate50 =  models.IntegerField(default=0)
+
   
   def __str__(self):
     return self.name
