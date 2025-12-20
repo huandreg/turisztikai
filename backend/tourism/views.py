@@ -45,5 +45,18 @@ def allCities(request):
       serialized.save()
       return Response(serialized.data)
 
+@api_view(["DELETE"])
+def deleteAttraction(request,attractionId):
+  if request.method == "DELETE":
+    attractionDelete = Attraction.objects.get(pk=attractionId)
+    attractionDelete.delete()
+
+@api_view(["PATCH"])
+def newRating(request,attractionId):
+  if request.method == "PATCH": 
+    attPartialUpdate = Attraction.objects.get(pk=attractionId)
+    attPartialUpdate.save()
+  
+
 
 

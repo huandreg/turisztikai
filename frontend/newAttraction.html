@@ -19,19 +19,19 @@
   </div>
   <div class="add-data-line">
     <div id="inner-new-data-container">
-      <form action="javascript:addCountry()">
+      <form action="javascript:addCountry()" id="add-country-id" name="add-country-name">
         <p>Új Ország Felvitele: <input placeholder="Csodálatosisztánia" type="text" id="new-country-id"><input
             type="submit"></p>
       </form>
       <br>
-      <form action="javascript:addCity()">
+      <form action="javascript:addCity()" name="add-city-name" id="add-city-id">
         <p>Új Város Felvitele: <select id="choose-country-id"></select><input placeholder="Mucsaröcsöge" type="text"
             id="new-city-id"><input type="submit"></p>
       </form>
 
       <br><br>
-
-      <form action="javascript:uploadNewAttraction()" method="post">
+      <p style="font-size: large; font-weight: bold">ÚJ LÁTVÁNYOSSÁG FELVITELE<p>
+      <form action="javascript:uploadNewAttraction()" method="post" name="new-attraction-name" id="new-attraction-id">
         Ország, Város: <select id="choose-city-id"></select>
         <p>Látványosság neve: <input placeholder="Mucsaröcsögei Csodapalota" id="att-name-id"></p>
         <p>Cím: <input placeholder="4093, Mittomén utca 4-8." type="text" id="att-address-id"></p>
@@ -46,7 +46,6 @@
   <div class="attractDatas"></div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="js/tourist.js"></script>
   <script src="js/newattract.js"></script>
 </body>
 

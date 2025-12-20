@@ -1,3 +1,5 @@
+const serverUrl = "http://127.0.0.1:8000";
+
 function listCountries() {
   fetch(`${serverUrl}/api/allcountries/`)
     .then(res => res.json())
@@ -78,5 +80,5 @@ function uploadNewAttraction() {
 
 
 
-listCountries();
+listCountries();//ezek miatt a külön JS file, így index render-nél nem dob hibát
 listCities();
