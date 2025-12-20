@@ -4,7 +4,7 @@ from rest_framework.response import Response
 from rest_framework import status
 
 from .models import Attraction, Country, City
-from .serializers import AttractionSerializer,AttractionSerializerPOST, CitySerializer, CitySerializerPOST, CountrySerializer 
+from .serializers import AttractionSerializer,AttractionSerializerPOST,AttractionRatingSerializer, CitySerializer, CitySerializerPOST, CountrySerializer 
 
 @api_view(["GET", "POST"])
 def allData(request):
@@ -53,10 +53,23 @@ def deleteAttraction(request,attractionId):
 
 @api_view(["PATCH"])
 def newRating(request,attractionId):
-  if request.method == "PATCH": 
-    attPartialUpdate = Attraction.objects.get(pk=attractionId)
-    attPartialUpdate.save()
-  
+  if request.method == "PATCH":
+    attraction = Attraction.objects.get(pk=attractionId)
+    serialized = AttractionRatingSerializer(attraction,data=request.data,partial=True)  # ez engedi, hogy csak egy mezőt frissíts
+    if serialized.is_valid():   
+      serialized.save()
+      return Response({
+            "message": "Rating updated successfully",
+            "updatedField": request.data,
+            "currentValues": serialized.data
+        }, status=200) 
+    else:
+      return Response({
+            "message": "Invalid data",
+            "errors": serialized.errors
+        }, status=400)
+
+
 
 
 

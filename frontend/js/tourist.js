@@ -55,13 +55,13 @@ function allAttractions() {
                         <span class="half-star rating-button" data-attraction-id="${element.id}" data-value="rate05" data-counter="${half}">⚪</span>
                         <span class="one-star rating-button" data-attraction-id="${element.id}" data-value="rate10" data-counter="${one}">⚪</span>
                         <span class="one-half-star rating-button" data-attraction-id="${element.id}" data-value="rate15" data-counter="${onehalf}">⚪</span>
-                        <span class="two-star rating-button" data-attraction-id="${element.id}" data-value="rate20"data-counter="${two}">⚪</span>
-                        <span class="two-half-star rating-button" data-attraction-id="${element.id}" data-value="rate25"data-counter="${twohalf}">⚪</span>
-                        <span class="three-star rating-button" data-attraction-id="${element.id}" data-value="rate30"data-counter="${three}">⚪</span>
-                        <span class="three-half-star rating-button" data-attraction-id="${element.id}" data-value="rate35"data-counter="${threehalf}">⚪</span>
-                        <span class="four-star rating-button" data-attraction-id="${element.id}" data-value="rate40"data-counter="${four}">⚪</span>
-                        <span class="four-half-star rating-button" data-attraction-id="${element.id}" data-value="rate45"data-counter="${fourhalf}">⚪</span>
-                        <span class="five-star rating-button" data-attraction-id="${element.id}" data-value="rate50"data-counter="${five}">⚪</span>    
+                        <span class="two-star rating-button" data-attraction-id="${element.id}" data-value="rate20" data-counter="${two}">⚪</span>
+                        <span class="two-half-star rating-button" data-attraction-id="${element.id}" data-value="rate25" data-counter="${twohalf}">⚪</span>
+                        <span class="three-star rating-button" data-attraction-id="${element.id}" data-value="rate30" data-counter="${three}">⚪</span>
+                        <span class="three-half-star rating-button" data-attraction-id="${element.id}" data-value="rate35" data-counter="${threehalf}">⚪</span>
+                        <span class="four-star rating-button" data-attraction-id="${element.id}" data-value="rate40" data-counter="${four}">⚪</span>
+                        <span class="four-half-star rating-button" data-attraction-id="${element.id}" data-value="rate45" data-counter="${fourhalf}">⚪</span>
+                        <span class="five-star rating-button" data-attraction-id="${element.id}" data-value="rate50" data-counter="${five}">⚪</span>    
                       </div>
                     <h6>${allRates} szavazat</h6>
                 </div>                  
@@ -71,22 +71,30 @@ function allAttractions() {
       });
       document.querySelectorAll(".rating-button").forEach(rateButton => {
         rateButton.addEventListener("click", () => {
+          const attractionId = rateButton.dataset.attractionId;
+          const whichRating = rateButton.dataset.value;
+          let rateCounter = rateButton.dataset.counter;
+          rateCounter++; 
+          console.log(attractionId + whichRating + rateCounter)
+          let dataToSend = {};
+          dataToSend[whichRating] = parseInt(rateCounter);
+
           fetch(`${serverUrl}/api/allattraction/rate/${attractionId}`, {
             method: "PATCH",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              whichRating:ratingCounter // ITT A LÉNYEG, EZ AZ ADAT LESZ ELKÜLDVE, URL-ben ELKÜLDVE HOGY VIEWBAN MELYIK OBJECT LESZ KIVÁLASZTVA
-              
-            })
+            body: JSON.stringify(dataToSend)  // ITT A LÉNYEG, EZ AZ ADAT LESZ ELKÜLDVE, URL-ben PEDIG ELKÜLDVE HOGY VIEWBAN MELYIK OBJ  LESZ KIVÁLASZTVA              
           })
-            .then(res => res.json())
-            .then(data => console.log("UPDATED: ", data));
+            .then(res => {
+              console.log(res.status, res.statusText);
+              return res.json();})
+            .then(data => console.log("UPDATED: ", data))
+            .catch(err => console.error(err));
         });
       });// eventlistener-t ide, mert különben ezt generálja lesz először és nem látná a generált HTML-t 
       // !!!FONTOS!!! dataset-nél automatikusan camelCase-é alakítja!!! attraction-id -> attractionId
     });
 }// rate-et meg lehetett volna oldani elegánsabban is, eléggé gusztustalan ez a sok ismétlődő rate, de így működik ezért nem bántom
-
+// ez ULTRA NAGY MESS
 function deleteAttraction(id) {
   fetch(`${serverUrl}/api/allattraction/delete/${id}`,
     {
@@ -103,7 +111,6 @@ function deleteAttraction(id) {
         console.log("There is a Problem");
       }
     }).catch(error => { console.log(error) });
-  allAttractions();
 }// látványosság törlése
 
 

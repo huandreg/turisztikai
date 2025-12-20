@@ -28,12 +28,13 @@ h4 {
   font-style: normal;
 }
 
-
+input{
+width: auto;
+}
 .card {
   text-align: center;
   margin: 25px 3px 3px 3px;
   border: 2px solid black;
-
 }
 
 .card>img {
@@ -85,12 +86,19 @@ button:hover {
 
 
 .add-data-line {
+  display: flex;
   text-align: center;
   justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 #inner-new-data-container {
-  text-align: left;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 
@@ -98,13 +106,12 @@ button:hover {
   display: inline-block;
   transform: scale(1.1);
 }
-
 .rating-button:hover {
   transform: scale(2);
   transition: all 0.5s;
-  cursor: url(../js/staticImages/planeicon.png), auto !important;
+  cursor: url(../js/staticImages/plane2.png), auto !important;
 }
 
 span {
-  cursor: url('staticImages/planeicon.png'), auto;
+  cursor: url(../js/staticImages/plane2.png), auto;
 }

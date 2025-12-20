@@ -18,19 +18,25 @@
     <button onclick="window.location.href='index.html'">Vissza A Főoldalra</button>
   </div>
   <div class="add-data-line">
-    <div id="inner-new-data-container">
+
+    <br>
+    <div>
       <form action="javascript:addCountry()" id="add-country-id" name="add-country-name">
         <p>Új Ország Felvitele: <input placeholder="Csodálatosisztánia" type="text" id="new-country-id"><input
             type="submit"></p>
       </form>
-      <br>
+    </div>
+    <br>
+    <div>
       <form action="javascript:addCity()" name="add-city-name" id="add-city-id">
         <p>Új Város Felvitele: <select id="choose-country-id"></select><input placeholder="Mucsaröcsöge" type="text"
             id="new-city-id"><input type="submit"></p>
       </form>
-
-      <br><br>
-      <p style="font-size: large; font-weight: bold">ÚJ LÁTVÁNYOSSÁG FELVITELE<p>
+    </div>
+    <br><br>
+    <div>
+      <p style="font-size: large; font-weight: bold">ÚJ LÁTVÁNYOSSÁG FELVITELE</p>
+     
       <form action="javascript:uploadNewAttraction()" method="post" name="new-attraction-name" id="new-attraction-id">
         Ország, Város: <select id="choose-city-id"></select>
         <p>Látványosság neve: <input placeholder="Mucsaröcsögei Csodapalota" id="att-name-id"></p>
@@ -42,6 +48,7 @@
         <p><input type="submit" class="button" value="Küldés"></p>
       </form>
     </div>
+
   </div>
   <div class="attractDatas"></div>
 

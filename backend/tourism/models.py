@@ -43,3 +43,4 @@ class Attraction(models.Model):
     return self.name
 
 
+

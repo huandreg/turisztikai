@@ -8,5 +8,5 @@ urlpatterns = [
     
     path('allattraction/delete/<int:attractionId>', views.deleteAttraction),
 
-    path('allattraction/rate/<int:attractionId>',views.newRating)
+    path('allattraction/rate/<int:attractionId>', views.newRating)
 ]

@@ -31,3 +31,10 @@ class AttractionSerializerPOST(serializers.ModelSerializer):
   class Meta:
     model = Attraction
     fields = '__all__'
+
+
+class AttractionRatingSerializer(serializers.ModelSerializer):
+  class Meta:
+    model = Attraction
+    fields = [ "rate05","rate10","rate15","rate20","rate25",
+            "rate30","rate35","rate40","rate45","rate50"]
