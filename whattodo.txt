@@ -1,0 +1,5 @@
+-keresés
+
+-törlés mappából is 
+
+-css upgrade, new addition oldal főleg, az nagyon rotty

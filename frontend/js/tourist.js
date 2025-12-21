@@ -1,6 +1,7 @@
 const serverUrl = "http://127.0.0.1:8000";
 let dataLine = document.querySelector(".attractDatas");
 let allAttractionsArray = []; //
+let searchArray = [];
 
 function roundToHalf(num) {
   return Math.round(num * 2) / 2;
@@ -12,6 +13,15 @@ function ratingHandler(rate05, rate10, rate15, rate20, rate25, rate30, rate35, r
   finalRating = roundToHalf(finalRating)
   return finalRating ? finalRating : 0
 }// rating-et kerekít .5-re, plusz NaN értéket 0-ra alakítja(értékelés nélkül NaN lenne a finalRating)
+
+
+function getAllForSearch() {
+
+}
+
+
+
+
 
 function allAttractions() {
   dataLine.innerHTML = "";
