@@ -2,4 +2,4 @@
 
 -törlés mappából is 
 
--css upgrade, new addition oldal főleg, az nagyon rotty
+-css upgrade(new addition, cursor, button-ök-input-ok, general)

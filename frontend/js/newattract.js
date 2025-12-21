@@ -10,6 +10,7 @@ function listCountries() {
     );
 }// listázás opciók megadásához, legördülőlistához
 
+
 function listCities() {
   fetch(`${serverUrl}/api/allcities/`)
     .then(res => res.json())
@@ -18,6 +19,7 @@ function listCities() {
         `<option value=${city.id} data-city=${city.id}>${city.attractionCountry.attractionCountry}, ${city.attractionCity}</div></option>`
     }));
 }// listázás opciók megadásához, legördülőlistához
+
 
 function addCountry() {
   let TheNewCountry = document.querySelector("#new-country-id").value;
@@ -35,9 +37,10 @@ function addCountry() {
       body: dataStringy
     }).then(res => res.json())
     .then(data => {
-      window.location.reload();
+      alert("ÚJ ORSZÁG HOZZÁADVA!")
     }).catch(error => console.log(error));
 }// POST fetch, ország felviteléhez
+
 
 function addCity() {
   let TheNewCity = document.getElementById("new-city-id").value;
@@ -57,9 +60,10 @@ function addCity() {
       body: dataStringy
     }).then(res => res.json())
     .then(data => {
-      window.location.reload();
+     alert("ÚJ VÁROS HOZZÁADVA!")
     }).catch(error => console.log(error));
 }// POST fetch, város felviteléhez
+
 
 function uploadNewAttraction() {
   let massData = new FormData();
@@ -74,7 +78,7 @@ function uploadNewAttraction() {
       method: 'POST',
       body: massData
     }
-  ).then(data => data.json()).then(data => console.log(data)).catch();
+  ).then(data => data.json()).then(data => {console.log(data);alert("ÚJ LÁTVÁNYOSSÁG HOZZÁADVA!")}).catch();
 }// POST fetch, form data típus, új látványosság felviteléhez
 
 
