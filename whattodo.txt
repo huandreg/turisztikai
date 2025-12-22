@@ -1,4 +1,4 @@
--keresés
+-keresés!!!DONE!!!-azért holnap tesztelni
 
 -törlés mappából is 
 
