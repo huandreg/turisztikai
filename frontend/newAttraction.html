@@ -15,37 +15,37 @@
   <div class="upper-line"></div>
   <h1>Turisztikai látványosságok</h1>
   <div class="button-line">
-    <button onclick="window.location.href='index.html'">Vissza A Főoldalra</button>
+    <button onclick="window.location.href='index.html'"  class="button-format">Vissza A Főoldalra</button>
   </div>
   <div class="add-data-line">
 
     <br>
     <div>
       <form action="javascript:addCountry()" id="add-country-id" name="add-country-name">
-        <p>Új Ország Felvitele: <input placeholder="Csodálatosisztánia" type="text" id="new-country-id"><input
-            type="submit"></p>
+        <p style="font-weight: bold;">Új Ország Felvitele: <input placeholder="Csodálatosisztánia" type="text" id="new-country-id"><input
+            type="submit" value="Küldés" class="button-format"></p>
       </form>
     </div>
     <br>
     <div>
       <form action="javascript:addCity()" name="add-city-name" id="add-city-id">
-        <p>Új Város Felvitele: <select id="choose-country-id"></select><input placeholder="Mucsaröcsöge" type="text"
-            id="new-city-id"><input type="submit"></p>
+        <p style="font-weight: bold;">Új Város Felvitele: <select id="choose-country-id"></select><input placeholder="Mucsaröcsöge" type="text"
+            id="new-city-id"><input type="submit" value="Küldés" class="button-format"></p>
       </form>
     </div>
     <br><br>
     <div>
-      <p style="font-size: large; font-weight: bold">ÚJ LÁTVÁNYOSSÁG FELVITELE</p>
+      <p style="font-size: xx-large; font-weight: bold">ÚJ LÁTVÁNYOSSÁG FELVITELE</p>
      
-      <form action="javascript:uploadNewAttraction()" method="post" name="new-attraction-name" id="new-attraction-id">
-        Ország, Város: <select id="choose-city-id"></select>
+      <p><form action="javascript:uploadNewAttraction()" method="post" name="new-attraction-name" id="new-attraction-id">
+        Ország, Város: <select id="choose-city-id"></select></p>
         <p>Látványosság neve: <input placeholder="Mucsaröcsögei Csodapalota" id="att-name-id"></p>
         <p>Cím: <input placeholder="4093, Mittomén utca 4-8." type="text" id="att-address-id"></p>
         <p>Nyitvatartás: <input placeholder="H-P: 8:00-17:30;Sz: 10:00-15:00;V: -" type="text" id="opening-id">
         </p>
         <p>Leirás: <input placeholder="Ide jöhet a leírás, 500 karakter" id="description-id"></p>
-        <p>Kép: <input type="file" name="image-file-name" id="image-file-id"></p>
-        <p><input type="submit" class="button" value="Küldés"></p>
+        <p>Kép: <input type="file" name="image-file-name" id="image-file-id" class="button-format"></p>
+        <p><input type="submit" class="button button-format" value="Küldés"></p>
       </form>
     </div>
 

@@ -4,6 +4,7 @@ countryArray = []; // országduplikáció mentesítése feature miatt
 cityArray = []; // városduplikáció mentesítésefeature miatt
 
 function listCountries() {
+  document.getElementById("choose-country-id").innerHTML += `<option value="" disabled selected>Válassz országot!</option>`;
   fetch(`${serverUrl}/api/allcountries/`)
     .then(res => res.json())
     .then(res => res.forEach(country => {
@@ -16,6 +17,7 @@ function listCountries() {
 
 
 function listCities() {
+  document.querySelector("#choose-city-id").innerHTML = `<option value="" disabled selected>Válassz várost!</option>`;
   fetch(`${serverUrl}/api/allcities/`)
     .then(res => res.json())
     .then(res => res.forEach(city => {
@@ -61,21 +63,22 @@ function addCity() {
       attractionCity: TheNewCity,
       attractionCountry: ChoosenCountry
     }
-  );if(!cityArray.includes(ChoosenCountry+TheNewCity.toLowerCase())){ fetch(`${serverUrl}/api/allcities/`,
-    {
-      method: 'POST',
-      headers:
+  ); if (!cityArray.includes(ChoosenCountry + TheNewCity.toLowerCase())) {
+    fetch(`${serverUrl}/api/allcities/`,
       {
-        'Content-Type': 'application/json'
-      },
-      body: dataStringy
-    }).then(res => res.json())
+        method: 'POST',
+        headers:
+        {
+          'Content-Type': 'application/json'
+        },
+        body: dataStringy
+      }).then(res => res.json())
     .then(data => {
       alert("ÚJ VÁROS HOZZÁADVA!")
     }).catch(error => console.log(error));
   } else {
-  document.getElementById("new-city-id").value = "";
-  alert("ILYEN ORSZÁG-VÁROS PÁROSÍTÁS MÁR LÉTRE VAN HOZVA!")
+    document.getElementById("new-city-id").value = "";
+    alert("ILYEN ORSZÁG-VÁROS PÁROSÍTÁS MÁR LÉTRE VAN HOZVA!")
   }
 }// POST fetch, város felviteléhez
 

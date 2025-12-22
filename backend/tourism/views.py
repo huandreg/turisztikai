@@ -18,7 +18,7 @@ def allData(request):
     if serialized.is_valid():
       serialized.save()
       return Response(serialized.data)
-    serialized.errors
+    serialized.errors()
     print("ERROR")
 
 @api_view(["GET", "POST"])
@@ -61,7 +61,7 @@ def newRating(request,attractionId):
       return Response({
             "message": "Rating updated successfully",
             "updatedField": request.data,
-            "currentValues": serialized.data  
+            "currentValues": serialized.data
         }, status=200) 
     else:
       return Response({

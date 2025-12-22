@@ -36,7 +36,7 @@ function getAllData() {
 } // egész lista mentése tömbbe, kereséshez, generáláshoz
 
 
-function htmlGenerator(beLista) {//ezt majd paraméterezni hogy bekapott lista után generáljon,
+function htmlGenerator(beLista) {
   dataLine.innerHTML = "";
   beLista.forEach(searchedId => {
     allAttractionsArray.forEach(element => {
@@ -170,10 +170,6 @@ function Searching() {
 
 
 getAllData();
-
-
-
-
 
 
 
