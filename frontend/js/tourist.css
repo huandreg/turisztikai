@@ -4,7 +4,7 @@ body {
 }
 
 body {
-  cursor: url(staticImages/planenew-right-mini.png), auto;
+  cursor: url(staticImages/plane2.png), auto;
 }
 
 .upper-line {
@@ -110,11 +110,11 @@ button:hover {
 }
 
 .rating-button:hover {
-  transform: scale(2.3);
-  transition: all 0.7s;
-  cursor: url(../js/staticImages/planenew-right-mini.png), auto !important;
+  transform: scale(2);
+  transition: all 0.5s;
+  cursor: url(../js/staticImages/plane2.png), auto !important;
 }
 
 span {
-  cursor: url(../js/staticImages/planenew-right-mini.png), auto;
+  cursor: url(../js/staticImages/plane2.png), auto;
 }
