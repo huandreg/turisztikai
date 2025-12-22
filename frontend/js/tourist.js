@@ -30,7 +30,6 @@ function getAllData() {
         allIdArray.push(element.id);
 
       });
-      console.log("AllIdZ: " + allIdArray)
       htmlGenerator(allIdArray);
     }
     );
@@ -101,7 +100,6 @@ function htmlGenerator(beLista) {//ezt majd paraméterezni hogy bekapott lista u
       const whichRating = rateButton.dataset.value;
       let rateCounter = rateButton.dataset.counter;
       rateCounter++;
-      console.log(attractionId + whichRating + rateCounter)
       let dataToSend = {};
       dataToSend[whichRating] = parseInt(rateCounter);
       fetch(`${serverUrl}/api/allattraction/rate/${attractionId}`, {
@@ -141,9 +139,6 @@ function deleteAttraction(id) {
 }// látványosság törlése
 
 
-
-
-//document.querySelector('.search-but').addEventListener('click', ide majd keresés fgv);
 function Searching() {
   searchArray = []; // searched id array restart
   let searchedWord;
@@ -158,25 +153,24 @@ function Searching() {
         element.attractionCity.attractionCountry.attractionCountry.toLowerCase().includes(inputWord)
       ) {
         searchArray.push(element.id);
-     
       }
     });
   }
   document.querySelector('#search-field').value = "";// field visszaállítása
-  console.log("searchArray: " + searchArray);
-  if (searchArray.length === 0) {
+  if (searchedWord == undefined) {
+    console.log("SEMMI VAGY KEVÉS KARAKTER");
+  }
+  else if (searchArray.length === 0) {
     alert("NINCS KERESÉSI TALÁLAT!");
   }
   else {
     htmlGenerator(searchArray);
   }
-}
+}// kereső fgv. min 4 karakter
 
 
 getAllData();
-if (searchArray.length !== 0) {
 
-}
 
 
 
