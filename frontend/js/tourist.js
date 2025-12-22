@@ -69,19 +69,19 @@ function htmlGenerator(beLista) {//ezt majd paraméterezni hogy bekapott lista u
               <div>
                 <div class="del-button" onclick="deleteAttraction(${element.id})">❌</div>                      
                 <h5>${element.description}</h5>
-            
+                <br><br><br>
                 <div>
                   <h6><span style="font-size: 30px">⭐ ${ratingHandler(half, one, onehalf, two, twohalf, three, threehalf, four, fourhalf, five)}</span>
                   <h6>Adj egy szavazatot: </h6> 
                     </h6>
                       <div >
-                        <span class="half-star rating-button" data-attraction-id="${element.id}" data-value="rate05" data-counter="${half}">😣</span>
-                        <span class="one-star rating-button" data-attraction-id="${element.id}" data-value="rate10" data-counter="${one}">🤐</span>
-                        <span class="one-half-star rating-button" data-attraction-id="${element.id}" data-value="rate15" data-counter="${onehalf}">🤨</span>
-                        <span class="two-star rating-button" data-attraction-id="${element.id}" data-value="rate20" data-counter="${two}">😑</span>
-                        <span class="two-half-star rating-button" data-attraction-id="${element.id}" data-value="rate25" data-counter="${twohalf}">😐</span>
-                        <span class="three-star rating-button" data-attraction-id="${element.id}" data-value="rate30" data-counter="${three}">🤔</span>
-                        <span class="three-half-star rating-button" data-attraction-id="${element.id}" data-value="rate35" data-counter="${threehalf}">🙂</span>
+                        <span class="half-star rating-button" data-attraction-id="${element.id}" data-value="rate05" data-counter="${half}">💀</span>
+                        <span class="one-star rating-button" data-attraction-id="${element.id}" data-value="rate10" data-counter="${one}">🤬</span>
+                        <span class="one-half-star rating-button" data-attraction-id="${element.id}" data-value="rate15" data-counter="${onehalf}">😭</span>
+                        <span class="two-star rating-button" data-attraction-id="${element.id}" data-value="rate20" data-counter="${two}">😣</span>
+                        <span class="two-half-star rating-button" data-attraction-id="${element.id}" data-value="rate25" data-counter="${twohalf}">🤐</span>
+                        <span class="three-star rating-button" data-attraction-id="${element.id}" data-value="rate30" data-counter="${three}">😐</span>
+                        <span class="three-half-star rating-button" data-attraction-id="${element.id}" data-value="rate35" data-counter="${threehalf}">🤔</span>
                         <span class="four-star rating-button" data-attraction-id="${element.id}" data-value="rate40" data-counter="${four}">😉</span>
                         <span class="four-half-star rating-button" data-attraction-id="${element.id}" data-value="rate45" data-counter="${fourhalf}">😎</span>
                         <span class="five-star rating-button" data-attraction-id="${element.id}" data-value="rate50" data-counter="${five}">😍</span>    
