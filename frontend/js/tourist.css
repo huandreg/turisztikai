@@ -110,7 +110,7 @@ input {
 }
 
 .rating-button:hover {
-  transform: scale(2);  
+  transform: scale(2);
   transition: all 0.5s;
   cursor: url(../js/staticImages/colorPlane.png), auto !important;
   filter: drop-shadow(0 0 10px rgb(203, 172, 21));
@@ -121,14 +121,16 @@ span {
 }
 
 .button-format {
-background-color: rgb(212, 212, 212);
-font-weight:400;
-border-radius: 2px;
-border: 1px solid rgb(104, 103, 103); 
+  background-color: rgb(212, 212, 212);
+  font-weight: 400;
+  border: none;
+  border-radius: 2px;
+
 }
 
 .button-format:hover {
   transform: scale(1.05);
-  transition: all 0.3s;
+  transition: all 0.7s;
   filter: drop-shadow(0 0 10px rgb(77, 84, 108));
+
 }
