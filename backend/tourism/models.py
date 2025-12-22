@@ -38,7 +38,11 @@ class Attraction(models.Model):
   rate45 = models.IntegerField(default=0)
   rate50 =  models.IntegerField(default=0)
 
-  
+  def delete(self, *args, **kwargs): # a Django modell delete() metódusának felülírása.
+        if self.attractionImage: # Ellenőrzi, hogy van-e feltöltött kép (FileField / ImageField) az adott objektumnál
+            self.attractionImage.delete(save=False)  # a kulcs: fizikailag törli a fájlt a szerverről
+        super().delete(*args, **kwargs)# Ez hívja az eredeti Django delete() metódust, ami ténylegesen törli az adatbázisból a rekordot.
+
   def __str__(self):
     return self.name
 
