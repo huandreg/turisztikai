@@ -1,12 +1,15 @@
 body {
   background-image: url(staticImages/travelFlight.jpg);
   background-size: contain;
+  cursor: url(../js/staticImages/plane6th.png), auto !important;
 }
 
-body {
-  cursor: url(staticImages/colorPlane.png)16 16, auto;
+input {
+  cursor: url(../js/staticImages/plane6th.png), auto !important;
 }
-
+button{
+cursor: url(../js/staticImages/plane6th.png), auto !important;
+}
 .upper-line {
   background-image: url(staticImages/bannerTravel.jpg);
   background-size: contain;
@@ -15,7 +18,8 @@ body {
   background-color: black;
 }
 
-h1, h2 {
+h1,
+h2 {
   margin: 20px;
   text-align: center;
   font-style: italic;
@@ -88,7 +92,6 @@ input {
 }
 
 .add-data-line {
-
   text-align: center;
   justify-content: center;
   align-items: center;
@@ -112,13 +115,9 @@ input {
 .rating-button:hover {
   transform: scale(2);
   transition: all 0.5s;
-  cursor: url(../js/staticImages/colorPlane.png), auto !important;
   filter: drop-shadow(0 0 5px rgb(180, 131, 47));
 }
 
-span {
-  cursor: url(../js/staticImages/colorPlane.png), auto;
-}
 
 .button-format {
   background-color: rgb(212, 212, 212);
@@ -135,19 +134,15 @@ span {
 
 }
 
-.search-extra{
-width: 320px;
-height: 40px;
+.search-extra {
+  width: 320px;
+  height: 40px;
 }
-
-
-
 
 
 .button-format {
   padding: 17px 40px;
   border-radius: 50px;
-  cursor: pointer;
   border: 0;
   background-color: rgb(228, 227, 227);
   box-shadow: rgb(0 0 0 / 5%) 0 0 8px;

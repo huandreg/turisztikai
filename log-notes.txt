@@ -1,6 +1,6 @@
 -keresés,low case-high-case kezelve     !!!Done!!!!
 
--törlés mappából is    !!!Done!!!!
+-törlés szervermappából is    !!!Done!!!!
 
 -Új felvitelnél, ország, város(foreign key) backend-ből kiolvasva     !!!Done!!!!
 
@@ -8,4 +8,7 @@
 
 -css upgrade(new addition, cursor, button-ök-input-ok, general)    !!!Done!!!
 
--rating után all generálást kiiktatni     (nem tudtam megoldani, Post Fetch auto újarendereli az oldalt) 
+-rating után all generálást kiiktatni     (nem tudtam megoldani, Post Fetch auto újarendereli az oldalt, lehet van rá megoldás) 
+// vmim localstorage-el meg lehetne oldani
+
+-ha lesz idő: lehetne hibákat szűrni, pl. ha elfelejtünk lépet hozzáadni dobjon valamit

@@ -136,6 +136,7 @@ function deleteAttraction(id) {
         console.log("There is a Problem");
       }
     }).catch(error => { console.log(error) });
+  alert("ADAT TÖRÖLVE!");
 }// látványosság törlése
 
 
