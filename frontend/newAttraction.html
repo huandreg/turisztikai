@@ -13,39 +13,45 @@
 
 <body>
   <div class="upper-line"></div>
-  <h1>Turisztikai látványosságok</h1>
+  <h1 style="background-color: rgb(242, 242, 242);">Turisztikai látványosságok</h1>
   <div class="button-line">
-    <button onclick="window.location.href='index.html'"  class="button-format">Vissza A Főoldalra</button>
+    <button onclick="window.location.href='index.html'" class="button-format">Vissza A Főoldalra</button>
   </div>
   <div class="add-data-line">
 
     <br>
     <div>
       <form action="javascript:addCountry()" id="add-country-id" name="add-country-name">
-        <p style="font-weight: bold;">Új Ország Felvitele: <input placeholder="Csodálatosisztánia" type="text" id="new-country-id"><input
-            type="submit" value="Küldés" class="button-format"></p>
+        <p style="font-weight: bold;">Új Ország Felvitele: <input placeholder="Csodálatosisztánia" type="text"
+            id="new-country-id" class="search-extra"><input type="submit" value="Küldés" class="button-format"></p>
       </form>
     </div>
     <br>
     <div>
       <form action="javascript:addCity()" name="add-city-name" id="add-city-id">
-        <p style="font-weight: bold;">Új Város Felvitele: <select id="choose-country-id"></select><input placeholder="Mucsaröcsöge" type="text"
-            id="new-city-id"><input type="submit" value="Küldés" class="button-format"></p>
+        <p style="font-weight: bold;">Új Város Felvitele: <select id="choose-country-id"></select><input
+            placeholder="Mucsaröcsöge" type="text" id="new-city-id" class="search-extra"><input type="submit" value="Küldés"
+            class="button-format"></p>
       </form>
     </div>
     <br><br>
     <div>
-      <p style="font-size: xx-large; font-weight: bold">ÚJ LÁTVÁNYOSSÁG FELVITELE</p>
-     
-      <p><form action="javascript:uploadNewAttraction()" method="post" name="new-attraction-name" id="new-attraction-id">
-        Ország, Város: <select id="choose-city-id"></select></p>
-        <p>Látványosság neve: <input placeholder="Mucsaröcsögei Csodapalota" id="att-name-id"></p>
-        <p>Cím: <input placeholder="4093, Mittomén utca 4-8." type="text" id="att-address-id"></p>
-        <p>Nyitvatartás: <input placeholder="H-P: 8:00-17:30;Sz: 10:00-15:00;V: -" type="text" id="opening-id">
+      <h2><p style="font-size: xx-large; font-weight: bold; background-color: rgb(242, 242, 242);">Új Látványosság Felvitele</p></h2>
+
+      <form action="javascript:uploadNewAttraction()" method="post" name="new-attraction-name" id="new-attraction-id">
+        <p>Ország, Város: <select id="choose-city-id"></select></p>
+        <p>Látványosság neve: <input placeholder="Mucsaröcsögei Csodapalota" id="att-name-id" class="search-extra"></p>
+        <p>Cím: <input placeholder="4093, Mittomén utca 4-8." type="text" id="att-address-id" class="search-extra"></p>
+        <p>Nyitvatartás: <input placeholder="H-P: 8:00-17:30;Sz: 10:00-15:00;V: -" type="text" id="opening-id" class="search-extra">
         </p>
-        <p>Leirás: <input placeholder="Ide jöhet a leírás, 500 karakter" id="description-id"></p>
-        <p>Kép: <input type="file" name="image-file-name" id="image-file-id" class="button-format"></p>
-        <p><input type="submit" class="button button-format" value="Küldés"></p>
+        <p>Leirás: <input placeholder="Ide jöhet a leírás, 500 karakter" id="description-id" class="search-extra"></p>
+        <input type="file" id="image-file-id" class="button-format" hidden>
+
+        <label for="image-file-id" class="custom-file-btn">
+          📷 Kép kiválasztása
+        </label>
+        <span id="file-name" class="button button-format">Nincs fájl kiválasztva</span>
+        <input type="submit" class="button button-format" value="Küldés">
       </form>
     </div>
 

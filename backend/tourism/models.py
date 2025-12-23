@@ -24,7 +24,7 @@ class Attraction(models.Model):
   attractionCity = models.ForeignKey(City, on_delete=models.CASCADE,)  
   address = models.CharField(max_length=150)
   openingHours = models.CharField(max_length=100)
-  description = models.CharField(max_length=500)  
+  description = models.CharField(max_length=750)  
   attractionImage = models.ImageField(upload_to="")
 
   rate05 = models.IntegerField(default=0)

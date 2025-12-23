@@ -164,6 +164,7 @@ function Searching() {
     alert("NINCS KERESÉSI TALÁLAT!");
   }
   else {
+    alert("TALÁLAT!");
     htmlGenerator(searchArray);
   }
 }// kereső fgv. min 4 karakter

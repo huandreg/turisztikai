@@ -11,16 +11,22 @@ def allData(request):
   if(request.method== "GET"):
     allAttraction = Attraction.objects.all()
     serializedAttractions = AttractionSerializer(allAttraction, many=True)
-    return Response(serializedAttractions.data)
+    return Response(serializedAttractions.data, status=status.HTTP_200_OK)
   if(request.method=="POST"):
+    if "attractionImage" in request.data:
+      print("TYPE:", type(request.data["attractionImage"]))
+      print("SIZE:", request.data["attractionImage"].size)
+    else:
+      print("NO attractionImage IN request.data")
     serialized = AttractionSerializerPOST(data=request.data)
     print(request.data)
     if serialized.is_valid():
       serialized.save()
-      return Response(serialized.data)
-    serialized.errors()
-    print("ERROR")
-
+      return Response(serialized.data, status=status.HTTP_201_CREATED)
+    else:
+      print("SERIALIZER ERRORS:", serialized.errors)  
+      return Response(serialized.errors, status=status.HTTP_400_BAD_REQUEST)
+    
 @api_view(["GET", "POST"])
 def allCountries(request):
   if(request.method == "GET"):
@@ -32,6 +38,7 @@ def allCountries(request):
     if serialized.is_valid():
       serialized.save()
       return Response(serialized.data)
+   
 
 @api_view(["GET", "POST"])
 def allCities(request):

@@ -73,9 +73,9 @@ function addCity() {
         },
         body: dataStringy
       }).then(res => res.json())
-    .then(data => {
-      alert("ÚJ VÁROS HOZZÁADVA!")
-    }).catch(error => console.log(error));
+      .then(data => {
+        alert("ÚJ VÁROS HOZZÁADVA!")
+      }).catch(error => console.log(error));
   } else {
     document.getElementById("new-city-id").value = "";
     alert("ILYEN ORSZÁG-VÁROS PÁROSÍTÁS MÁR LÉTRE VAN HOZVA!")
@@ -84,19 +84,24 @@ function addCity() {
 
 
 function uploadNewAttraction() {
-  let massData = new FormData();
-  massData.append("name", document.getElementById("att-name-id").value);
-  massData.append("address", document.getElementById("att-address-id").value);
-  massData.append("openingHours", document.getElementById("opening-id").value);
-  massData.append("description", document.getElementById("description-id").value);
-  massData.append("attractionCity", document.getElementById("choose-city-id").value);
-  massData.append("attractionImage", document.getElementById("image-file-id").files[0]);
-  fetch(`${serverUrl}/api/allattraction/`,
-    {
-      method: 'POST',
-      body: massData
-    }
-  ).then(data => data.json()).then(data => { console.log(data); alert("ÚJ LÁTVÁNYOSSÁG HOZZÁADVA!") }).catch();
+  if ("description", document.getElementById("description-id").value > 750) {
+  alert("TÚL HOSSZÚ DESCRIPTION!")
+  }
+  else {
+    let massData = new FormData();
+    massData.append("name", document.getElementById("att-name-id").value);
+    massData.append("address", document.getElementById("att-address-id").value);
+    massData.append("openingHours", document.getElementById("opening-id").value);
+    massData.append("description", document.getElementById("description-id").value);
+    massData.append("attractionCity", document.getElementById("choose-city-id").value);
+    massData.append("attractionImage", document.getElementById("image-file-id").files[0]);
+    fetch(`${serverUrl}/api/allattraction/`,
+      {
+        method: 'POST',
+        body: massData
+      }
+    ).then(data => data.json()).then(data => { console.log(data); alert("ÚJ LÁTVÁNYOSSÁG HOZZÁADVA!") }).catch();
+  }
 }// POST fetch, form data típus, új látványosság felviteléhez
 
 
